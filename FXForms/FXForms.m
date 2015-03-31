@@ -3335,7 +3335,12 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
 - (void)setUp
 {
     self.datePicker = [[UIDatePicker alloc] init];
-    [self.datePicker addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
+}
+
+- (void)setDatePicker:(UIDatePicker *)datePicker
+{
+    _datePicker = datePicker;
+    [datePicker addTarget:self action:@selector(valueChanged) forControlEvents:UIControlEventValueChanged];
 }
 
 - (void)update
